@@ -19,9 +19,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_184549) do
     t.datetime "end_date"
     t.boolean "confirmed"
     t.bigint "user_id", null: false
+    t.bigint "instrument_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["instrument_id"], name: "index_bookings_on_instrument_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.string "genre"
+    t.string "description"
+    t.integer "price"
+    t.string "location"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_instruments_on_user_id"
   end
 
   create_table "instruments", force: :cascade do |t|
@@ -47,5 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_184549) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "instruments"
   add_foreign_key "bookings", "users"
+  add_foreign_key "instruments", "users"
 end
