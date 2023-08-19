@@ -13,11 +13,18 @@ class InstrumentsController < ApplicationController
   end
 
   def create
-    @instrument = Instrument.create(params[:name, :description, :price])
+    #@instrument = Instrument.create(params[:name, :description, :price])
+    @instrument = Instrument.new(instrument_params)
+    @instrument.user = current_user
+    if @instrument.save!
+      redirect_to instrument_path(@instrument)
+    else
+      render :new
+    end
   end
 
 
-  puts "Instrument added: #{Instrument.last.name}"
+  #puts "Instrument added: #{Instrument.last.name}"
 
   #   instrument.user = current_user
   #   if instrument.save
@@ -27,10 +34,11 @@ class InstrumentsController < ApplicationController
   #   end
   # end
 
-  # private
-  # def instrument_params
-  #   params.require(:instrument).permit(:name, :type, :genre, :description, :price, :location)
-  # end
+  private
+
+  def instrument_params
+    params.require(:instrument).permit(:name, :description, :price)
+  end
 
 end
 # db for reference
