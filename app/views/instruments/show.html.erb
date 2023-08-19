@@ -1,5 +1,16 @@
-<h1>What a great instrument 😎</h1>
-<h2><%= @instrument.name %></h2>
-<p><%= @instrument.description %></p>
-<p><%= "£#{@instrument.price}"  %></p>
-<%= link_to "Book this instrument", new_instrument_booking_path(@instrument) %>
+
+
+<div class=container>
+  <h1>What a great instrument 😎</h1>
+  <div class="card-trip">
+  <img src="https://images.pexels.com/photos/164935/pexels-photo-164935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @instrument.name %></h2>
+      <p><%= @instrument.description %></p>
+      <p><%= link_to "Book this instrument", new_instrument_booking_path(@instrument), class: "btn btn-flat"%> </p>
+    </div>
+    <h2 class="card-trip-pricing"><%= "£#{@instrument.price}"  %></h2>
+    <%= image_tag "to_11.jpeg", class: "card-trip-user avatar-bordered"%>
+  </div>
+</div>
