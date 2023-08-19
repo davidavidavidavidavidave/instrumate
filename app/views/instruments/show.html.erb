@@ -1,0 +1,5 @@
+<h1>What a great instrument 😎</h1>
+<h2><%= @instrument.name %></h2>
+<p><%= @instrument.description %></p>
+<p><%= "£#{@instrument.price}"  %></p>
+<%= link_to "Book this instrument", new_instrument_booking_path(@instrument) %>
