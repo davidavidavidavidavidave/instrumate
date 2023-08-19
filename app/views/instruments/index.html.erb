@@ -1,17 +1,11 @@
 <h1>All Instruments 😌</h1>
-<ul>
-  <% @instruments.each do |instrument| %>
-    <li><%= instrument.name %></li>
-    <li><%= instrument.description %></li>
-    <li><%= instrument.price %></li>
+<div>
+  <ul>
+    <% @instruments.each do |instrument| %>
+      <div>
+        <%= instrument.name %>
+        <%= "£#{instrument.price}" %>
+        <%= link_to "View this instrument", instrument_path(instrument) %>
+      </div>
   <% end %>
 </ul>
-<%# <%= link_to "Add a new instrument", new_instrument_path %> 
-
-<%# schema for ref %>
-<%#  t.string "name"
-    t.string "type"
-    t.string "genre"
-    t.string "description"
-    t.integer "price"
-    t.string "location" %>
