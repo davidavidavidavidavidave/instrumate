@@ -1,2 +1,26 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+  <%# <h1>Pages#home</h1> %>
+<%# <p>Find me in app/views/pages/home.html.erb</p> %>
+
+<%# <div class=instruments-button>
+  <p class=button-text><%= link_to "See all instruments", instruments_path, style: "color: white;" %>
+<%# </div> %>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1588032786045-59cefda005c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2088&q=80);">
+  <div class="container">
+    <h1><strong>INSTRUMATE</strong></h1>
+    <p>Bringing you to your instruments mate.</p>
+    <a><%= link_to "Rock on!", instruments_path, class: "btn btn-flat"%></a>
+    <%# <p class=button-text><%= link_to "See all instruments", instruments_path, style: "color: white;" %>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)">
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)">
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1628452800825-c2d5682e016a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXBjfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60)">
+  </div>
+</div>
