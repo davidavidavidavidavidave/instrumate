@@ -8,12 +8,17 @@ class InstrumentsController < ApplicationController
     @instrument = Instrument.find(params[:id])
   end
 
-  # def new
-  #   @instrument = Instrument.new
-  # end
+  def new
+    @instrument = Instrument.new
+  end
 
-  # def create
-  #   instrument = Instrument.new(instrument_params)
+  def create
+    @instrument = Instrument.create(params[:name, :description, :price])
+  end
+
+
+  puts "Instrument added: #{Instrument.last.name}"
+
   #   instrument.user = current_user
   #   if instrument.save
   #     redirect_to instrument_path(instrument)
