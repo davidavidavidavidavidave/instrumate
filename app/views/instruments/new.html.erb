@@ -1,8 +1,10 @@
-<h1>Adding a new instrument </h1>
+<div class="container">
+  <h1>Adding a new instrument </h1>
 
-<%= simple_form_for @instrument do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.submit class: 'btn btn-flat' %>
-<% end %>
+  <%= simple_form_for @instrument do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.submit class: 'btn btn-flat' %>
+  <% end %>
+</div>
