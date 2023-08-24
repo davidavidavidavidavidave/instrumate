@@ -1,13 +1,27 @@
+<div class="container">
 <h1>New Booking</h1>
 
 <%#<h2><%= @instrument.name %></h2>
 <%#<p><%= @instrument.description %></p>
 <%#<p><%= "£#{@instrument.price}"  %></p>
 
-<%= simple_form_for ([@instrument, @booking]) do |f| %>
-  <%= f.input :start_date, order: [:day, :month, :year], as: :datetime, default: Time.zone.parse('00:00') %>
-  <%= f.input :end_date, order: [:day, :month, :year], as: :datetime, default: Time.zone.parse('00:00') %>
-  <%= f.submit %>
-<% end %>
+<div class = "d-flex justify-content-between">
+  <div class="row align-items-start">
+    <%= simple_form_for ([@instrument, @booking]) do |f| %>
+      <div class="col-12">
+      <%= f.input :start_date, order: [:day, :month, :year], as: :date , html5: true %>
+        </div>
+        <div class="col-12">
+        <%= f.input :end_date, order: [:day, :month, :year], as: :date , html5: true %>
+        </div>
+        <%= f.submit %>
+        <% end %>
+        </div>
+
+  <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), ">
+    <img src="https://images.pexels.com/photos/164935/pexels-photo-164935.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2">
+  </div>
+</div>
 
 <%= link_to "View more instruments", instruments_path %>
+</div>
