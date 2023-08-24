@@ -1,10 +1,10 @@
 <h1>New Booking</h1>
 
-<h2><%= @instrument.name %></h2>
-<p><%= @instrument.description %></p>
-<p><%= "£#{@instrument.price}"  %></p>
+<%#<h2><%= @instrument.name %></h2>
+<%#<p><%= @instrument.description %></p>
+<%#<p><%= "£#{@instrument.price}"  %></p>
 
-<%= simple_form_for [@instrument, @booking] do |f| %>
+<%= simple_form_for ([@instrument, @booking]) do |f| %>
   <%= f.input :start_date, order: [:day, :month, :year], as: :datetime, default: Time.zone.parse('00:00') %>
   <%= f.input :end_date, order: [:day, :month, :year], as: :datetime, default: Time.zone.parse('00:00') %>
   <%= f.submit %>

@@ -1,24 +1,42 @@
 class BookingsController < ApplicationController
-  def index
-    "@bookings = Bookings.all"
-  end
+  before_action :set_user
+  before_action :set_instrument, only: [:new, :create]
 
   def new
-    @instrument = Instrument.find(params[:instrument_id])
     @booking = Booking.new
   end
 
-  # def create
-  # booking = Booking.new(booking_params)
-  # booking.user = current_user
-  #   if booking.save
-  #     redirect_to instrument_path(instrument)
-  #   else
-  #     render :new
-  # end
+  def index
+    @user = current_user
+    @bookings = @user.bookings
+  end
 
-  # private
-  # def booking_params
-  #   params.require(:booking).permit(:name, :type, :genre, :description, :price, :location)
-  # end
+  def create
+    booking = Booking.new(booking_params)
+    booking.user = @user
+    booking.instrument = @instrument
+    if booking.save
+      redirect_to booking_confirmation_path
+    else
+      render :new
+    end
+  end
+
+   def booking_confirmation
+   end
+
+   private
+   def set_instrument
+    @instrument = Instrument.find(params[:instrument_id])
+   end
+
+  def set_user
+    if user_signed_in?
+      @user = current_user
+    end
+  end
+
+   def booking_params
+     params.require(:booking).permit(:start_date, :end_date , :instrument_id)
+   end
 end
