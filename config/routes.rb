@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "instruments#index"
-resources :instruments do
+  resources :instruments do
+    resources :bookings
+  end
   resources :bookings
-end
-
 end

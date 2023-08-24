@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_user
-  before_action :set_instrument
+  before_action :set_instrument, only: [:new, :create]
 
   def new
     @booking = Booking.new
@@ -15,11 +15,11 @@ class BookingsController < ApplicationController
     booking = Booking.new(booking_params)
     booking.user = @user
     booking.instrument = @instrument
-     if booking.save
-       redirect_to booking_confirmation_path(booking)
-       else
-       render :new
-     end
+    if booking.save
+      redirect_to booking_confirmation_path
+    else
+      render :new
+    end
   end
 
    def booking_confirmation
