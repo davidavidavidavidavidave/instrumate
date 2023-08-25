@@ -22,7 +22,7 @@ puts "creating instruments"
     genre: Faker::Music.genre,
     name: Faker::Music.instrument,
     price: Faker::Number.decimal(l_digits: 2),
-    location: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    location: Faker::Address.country,
     description: Faker::ChuckNorris.fact,
     user_id: User.last.id
   )
