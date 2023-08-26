@@ -10,3 +10,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.mini-map {
+  margin-top: 10px; /* Add space between instrument details and mini-map */
+}
