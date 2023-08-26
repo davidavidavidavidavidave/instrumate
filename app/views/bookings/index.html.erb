@@ -6,7 +6,7 @@
       <ul>
         <% @bookings.each do |booking| %>
           <div class="card-product">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fget.pxhere.com%2Fphoto%2Fmusic-black-and-white-keyboard-technology-guitar-piano-black-monochrome-musical-instrument-close-up-bass-guitar-synthesizer-computer-keyboard-string-instrument-electronic-device-musical-keyboard-electronic-instrument-plucked-string-instruments-electronic-keyboard-analog-synthesizer-1364789.jpg&f=1&nofb=1&ipt=37ab07f83b5a819af017db8421d68fd44ff4bdbb8ed0972919bf2482170a812a&ipo=images" />
+              <img src= "https://source.unsplash.com/random/?<%=booking.instrument.name%>">
             <div class="card-product-infos">
               <%= booking.instrument.name %>
               <h2>Booking status: Confirmed</h2>
