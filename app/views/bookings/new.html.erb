@@ -9,12 +9,12 @@
   <div class="row align-items-start">
     <%= simple_form_for ([@instrument, @booking]) do |f| %>
       <div class="col-12">
-      <%= f.input :start_date, order: [:day, :month, :year], as: :date , html5: true %>
+        <%= f.input :start_date, order: [:day, :month, :year], as: :date , html5: true %>
         </div>
-        <div class="col-12">
-        <%= f.input :end_date, order: [:day, :month, :year], as: :date , html5: true %>
-        </div>
-        <%= f.submit %>
+          <div class="col-12">
+            <%= f.input :end_date, order: [:day, :month, :year], as: :date , html5: true %>
+          </div>
+        <%= f.submit "Create Booking", class: "btn btn-flat" %>
         <% end %>
         </div>
 
