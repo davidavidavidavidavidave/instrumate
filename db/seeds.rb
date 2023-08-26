@@ -17,12 +17,12 @@ User.create!(
 )
 puts "creating instruments"
 
-10.times do
+5.times do
   Instrument.create!(
     genre: Faker::Music.genre,
     name: Faker::Music.instrument,
     price: Faker::Number.decimal(l_digits: 2),
-    location: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    location: Faker::Address.state,
     description: Faker::ChuckNorris.fact,
     user_id: User.last.id
   )

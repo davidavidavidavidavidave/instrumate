@@ -1,0 +1,27 @@
+.booking-confirmation-card {
+  margin-top: 128px;
+  border: 0.5px solid rgb(0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+}
+
+.booking-header {
+  text-align: left;
+  margin-top: 64px;
+  margin-bottom: 32px;
+  padding: 24px;
+}
+
+.instrumate-logo {
+  text-align: center;
+  border-radius: 50%;
+  padding: 24px;
+  // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  width: 240px;
+  height: 240px;
+
+  // object-fit: cover;
+}
