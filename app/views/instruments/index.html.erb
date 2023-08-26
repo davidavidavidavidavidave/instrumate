@@ -1,6 +1,13 @@
 <h1>Instruments</h1>
 <div class="container">
   <h1>All Instruments 😌</h1>
+  <div data-controller="map"
+      id='map'
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-map-markers-value="<%= @markers.to_json %>"
+      style='width: 50%; height: 300px'>
+  </div>
+
   <ul>
     <% @instruments.each do |instrument| %>
       <div class="card-product">
@@ -10,14 +17,10 @@
           <%= "£#{instrument.price}" %>
           <%= link_to "View this instrument", instrument_path(instrument) %>
           <br>
-          <div class="mini-map"
-               data-controller="map"
-               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-               data-map-markers-value="<%= [{ lat: instrument.latitude, lng: instrument.longitude, info_window: instrument.name }].to_json %>"
-               data-instrument-id="<%= instrument.id %>"
-               style='width: 50%; height: 15px;'></div>
+
         </div>
       </div>
     <% end %>
   </ul>
+
 </div>
