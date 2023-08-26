@@ -5,6 +5,7 @@
       <div class="card-trip-infos">
         <div>
           <h2><%= @instrument.name %></h2>
+          <h3><%= @instrument.genre %></h3>
           <p><%= @instrument.description %></p>
           <p><%= link_to "Book this instrument", new_instrument_booking_path(@instrument, @booking), class: "btn btn-flat"%> </p>
         </div>
@@ -15,6 +16,7 @@
   <div class="mini-map" data-controller="map"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
       data-map-markers-value="<%= [{ lat: @instrument.latitude, lng: @instrument.longitude, info_window: @instrument.name }].to_json %>"
+      data-map-page-value="show"
       data-instrument-id="<%= @instrument.id %>"
       style='width: 100%; height: 400px; margin-top: 16px;'>
   </div>
