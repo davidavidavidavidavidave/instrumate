@@ -12,14 +12,10 @@
         <%= image_tag "to_11.jpeg", class: "card-trip-user avatar-bordered"%>
       </div>
     </div>
-
+  <div class="mini-map" data-controller="map"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-map-markers-value="<%= [{ lat: @instrument.latitude, lng: @instrument.longitude, info_window: @instrument.name }].to_json %>"
+      data-instrument-id="<%= @instrument.id %>"
+      style='width: 100%; height: 400px; margin-top: 16px;'>
+  </div>
 </div>
-  <div class="card-trip">
-  <div class="mini-map"
-      data-controller="map"
-                  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-                  data-map-markers-value="<%= [{ lat: @instrument.latitude, lng: @instrument.longitude, info_window: @instrument.name }].to_json %>"
-                  data-instrument-id="<%= @instrument.id %>"
-       style='width: 100%; height: 600px;'></div>
-  </div>
-  </div>
